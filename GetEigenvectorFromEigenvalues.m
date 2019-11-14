@@ -31,6 +31,6 @@ function v_ij = getEigenvectorFromEigenvalues(H, i, j)
          end
      end
      
-     % 4. ||v(i,j)||^2 = RES_A / RES_B.
+     % 4. ||v(i,j)||^2 = res_A / res_B.
      v_ij = res_A/res_B;
 end
