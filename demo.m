@@ -1,13 +1,12 @@
-% Demonstration of getEigenvectorsFromEigenvalues()
 
+% Demonstration:
 H = [ -1  4  -2  ; ...
       -3  4   0  ; ...
       -3  1   3  ];
 
-[P, D] = eig(H); % Diagonalizable matrix such that H = P * D * P^-1
-disp('Using MatLab function: eig(H):')
-disp(P);
-disp(D); 
+[~, ~, eigenvectors] = eig(H);
+disp('Eigenvectors using MatLab function: eig(H):')
+disp(eigenvectors);
 
 v11 = getEigenvectorFromEigenvalues(H,1,1);
 v12 = getEigenvectorFromEigenvalues(H,1,2);
@@ -24,5 +23,5 @@ ev_of_H = [v11 v21 v31; ...
            v12 v22 v32; ...
            v13 v23 v33];
 
-disp('getEigenvectorFromEigenvalues(H,i,j):')
+disp('Eigenvectors using getEigenvectorFromEigenvalues(H,i,j):')
 disp(ev_of_H);
