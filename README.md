@@ -10,6 +10,6 @@ Since this formula can produce a specific eigenvector of the ith row and jth col
 Basic criteria include both time and (eventually) space complexity.
 
 ## TODO(s): 
-- Improve the current implementation, which is the bare bones version.
+- Improve the current implementation. Remove unnecessary copies, stores, etc.
 - Since we only need to compute the eigenvalues, research fastest way to compute eigenvalues on Matlab.
 - Compare speeds to eig() on variety of matrices (large, sparse, circulant, ...)
