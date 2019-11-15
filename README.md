@@ -12,4 +12,5 @@ Basic criteria include both time and (eventually) space complexity.
 ## TODO(s): 
 - Improve the current implementation. Remove unnecessary copies, stores, etc.
 - Since we only need to compute the eigenvalues, research fastest way to compute eigenvalues on Matlab.
+- Read: https://www.mathworks.com/matlabcentral/fileexchange/48-locally-optimal-block-preconditioned-conjugate-gradient
 - Compare speeds to eig() on variety of matrices (large, sparse, circulant, ...)
