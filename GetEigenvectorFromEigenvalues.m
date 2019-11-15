@@ -2,7 +2,7 @@
 % For more information on proof, see: https://arxiv.org/pdf/1908.03795.pdf
 
 % Gets the normed eigenvector ||v(i,j)||^2 from the matrix H.
-% 'H' must be an N x N matrix.
+% 'H' must be a Hermitian matrix.
 % 'i' is the row.    1 <= i <= N.
 % 'j' is the column. 1 <= j <= N.
 function v_ij = GetEigenvectorFromEigenvalues(H, i, j)
