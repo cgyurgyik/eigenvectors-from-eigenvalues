@@ -1,4 +1,4 @@
-% Tests for GEME function family.
+% Tests for GEFE function family.
 %
 % To run tests: results = runtests('GetEigenvectorFromEigenvaluesTest');
 %
