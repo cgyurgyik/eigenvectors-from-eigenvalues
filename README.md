@@ -11,8 +11,6 @@ Since this formula can produce a specific eigenvector of the ith row and jth col
 Basic criteria include both time and (eventually) space complexity, while meeting accuracy requirements.
 
 ## TODO(s) 
-- Improve the current implementation.
+- Determine best approach to arguments. Allow user to pass in a function, or pass in eigenvalues?
 - Add more tests.
-- Since we only need to compute the eigenvalues, research fastest way to compute eigenvalues on Matlab.
-- Read: https://www.mathworks.com/matlabcentral/fileexchange/48-locally-optimal-block-preconditioned-conjugate-gradient
-- Compare speeds to eig() on variety of matrices (large, sparse, circulant, ...)
+- Compare speeds to eig(), svd(), svds() on variety of matrices (large, sparse, circulant, ...)
