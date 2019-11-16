@@ -1,7 +1,8 @@
 # EigenvectorsFromEigenvalues
-[UNDER CONSTRUCTION]
-
 Implementing the formula necessary to compute eigenvectors given only eigenvalues.
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\newline&space;(1)\sum_{j=1}^{n}&space;\left&space;|&space;v_{n,j}&space;\right&space;|^{2}&space;\prod_{k=1}^{n-1}&space;\lambda_{k}(A)&space;=&space;\sum_{j=1}^{n}det(M_{j})&space;\newline&space;(2)\sum_{j=1}^{n}&space;\left&space;|&space;v_{n,j}&space;\right&space;|^{2}&space;=&space;\dfrac{\sum_{j=1}^{n}det(M_{j})}&space;{&space;\prod_{k=1,&space;k\neq&space;i}^{n-1}&space;\lambda_{k}(A)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\newline&space;(1)\sum_{j=1}^{n}&space;\left&space;|&space;v_{n,j}&space;\right&space;|^{2}&space;\prod_{k=1}^{n-1}&space;\lambda_{k}(A)&space;=&space;\sum_{j=1}^{n}det(M_{j})&space;\newline&space;(2)\sum_{j=1}^{n}&space;\left&space;|&space;v_{n,j}&space;\right&space;|^{2}&space;=&space;\dfrac{\sum_{j=1}^{n}det(M_{j})}&space;{&space;\prod_{k=1,&space;k\neq&space;i}^{n-1}&space;\lambda_{k}(A)}" title="\newline (1)\sum_{j=1}^{n} \left | v_{n,j} \right |^{2} \prod_{k=1}^{n-1} \lambda_{k}(A) = \sum_{j=1}^{n}det(M_{j}) \newline (2)\sum_{j=1}^{n} \left | v_{n,j} \right |^{2} = \dfrac{\sum_{j=1}^{n}det(M_{j})} { \prod_{k=1, k\neq i}^{n-1} \lambda_{k}(A)}" /></a>
+
 See: https://arxiv.org/pdf/1908.03795.pdf for proof.
 
 ## Objective(s)
