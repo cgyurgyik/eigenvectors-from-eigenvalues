@@ -1,5 +1,5 @@
 % Calculating eigenvectors from eigenvalues.
-% Gets the normed eigenvector ||v(ii,j)||^2 from the matrix H.
+% Gets the normed eigenvector ||v(i,j)||^2 for each i in 'ii' from the matrix H.
 %   Takes in 3 or 4 arguments:
 %   - 'H' must be a Hermitian matrix.
 %   - 'ii' is the row(s) of column 'j'.    for each i, 1 <= i <= N.
