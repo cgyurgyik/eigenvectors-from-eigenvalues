@@ -32,7 +32,7 @@ function testMediumHermitianMatrix2(testCase)
     Med_Hermitian_Matrix = (H+H')/2; 
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Med_Hermitian_Matrix);
     [expected_eigenvectors, ~] = eig(Med_Hermitian_Matrix);
-    
+
     verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
 end
 

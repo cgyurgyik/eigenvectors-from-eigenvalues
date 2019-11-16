@@ -17,12 +17,14 @@ function v_ij = GetEigenvectorFromEigenvalues(H, i, j)
      hj_eigenvalues = eig(hj);
           
      % 3a. res_A = res_A * [λi(H) - λk(hj)] from k = 1 to (N - 1).
-     res_A = prod( ei - hj_eigenvalues );
+     %res_A = prod( ei - hj_eigenvalues );
      
      % 3b. res_B = res_B * [λi(H) - λk(H)]  from k = 1 to N with limitation (k =/= i).
      H_eigenvalues(i) = []; 
-     res_B = prod( ei - H_eigenvalues );
+     %res_B = prod( ei - H_eigenvalues );
      
      % 4. |v(i,j)|^2 = res_A / res_B.
-     v_ij = res_A/res_B;
+     %v_ij = res_A/res_B;
+     
+     v_ij = prod( (ei - hj_eigenvalues)./(ei - H_eigenvalues) ); 
 end
