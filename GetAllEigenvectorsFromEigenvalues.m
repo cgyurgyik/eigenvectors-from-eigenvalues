@@ -11,7 +11,7 @@ function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
     elseif nargin == 2
         H_eigenvalues = varargin{2};
     else
-         error('GetEigenvectorFromEigenvalues accepts 1 or 2 arguments.')
+         error('GetAllEigenvectorFromEigenvalues accepts 1 or 2 arguments.')
     end
     
     n = length(H);
