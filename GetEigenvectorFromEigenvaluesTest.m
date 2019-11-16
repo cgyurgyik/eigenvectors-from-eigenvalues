@@ -38,9 +38,9 @@ end
 
 % function testLargeHermitianMatrix(testCase)
 %     H = randn(250,250); 
-%     Med_Hermitian_Matrix = (H+H')/2; 
-%     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Med_Hermitian_Matrix);
-%     [expected_eigenvectors, ~] = eig(Med_Hermitian_Matrix);
+%     Lg_Hermitian_Matrix = (H+H')/2; 
+%     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Lg_Hermitian_Matrix);
+%     [expected_eigenvectors, ~] = eig(Lg_Hermitian_Matrix);
 %     
 %     verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
 % end
