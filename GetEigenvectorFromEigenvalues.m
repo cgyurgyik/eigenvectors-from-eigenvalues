@@ -13,7 +13,18 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
 %     defaults to using MATLAB's eig().
 % Currently, the eigenvalues of hj are produced using MATLAB's eig().
 %
-% Requires: length(H_eigenvalues) == N.
+% Example:
+%          A = [1 1;
+%               0 0];
+%          GetEigenvectorFromEigenvalues(A, [1 2], 1);
+%
+%          Returns: [1;
+%                    0]
+% Similarly,
+%          GetEigenvectorFromEigenvalues(A, [2 1], 1);
+%
+%          Returns: [0;
+%                    1]
 
      if nargin < 3 || nargin > 4
          error('GetEigenvectorFromEigenvalues accepts 3 or 4 arguments: H, ii, j, (optional) H_eigenvalues.');
@@ -26,8 +37,14 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      end
      
      ii = varargin{2};
-     if ~isvector(ii)
-         error('ii must be a vector containing the rows of column j for which you want the eigenvector values.')
+     
+     if ~isvector(ii) || length(ii) > N
+         error('ii must be a vector containing the rows of column j for which you want the eigenvector values. Its length must be less than N.');
+     end
+     
+     greater_than_N = ii > N;
+     if sum(greater_than_N) ~= 0
+        error('Each i in ii must be a row of the matrix H. For each i, 1 <= i <= N.');
      end
      
      j = varargin{3};
@@ -49,10 +66,9 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      H(j, :) = []; % Remove jth row.
      Hj_eigenvalues = eig(H);
      
-     num_i = numel(ii);
-     v_j = zeros(num_i,1);
+     v_j = zeros(numel(ii),1);
      
-     for k = 1:num_i
+     for k = 1:numel(ii)
          ei = H_eigenvalues(ii(k));
          H_ii = H_eigenvalues;
          H_ii(ii(k)) = [];
