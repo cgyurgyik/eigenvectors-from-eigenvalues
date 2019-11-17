@@ -13,18 +13,25 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
 %     defaults to using MATLAB's eig().
 % Currently, the eigenvalues of hj are produced using MATLAB's eig().
 %
-% Example:
+% Example 1:
 %          A = [1 1;
 %               0 0];
 %          GetEigenvectorFromEigenvalues(A, [1 2], 1);
 %
 %          Returns: [1;
 %                    0]
-% Similarly,
+%          Similarly,
 %          GetEigenvectorFromEigenvalues(A, [2 1], 1);
 %
 %          Returns: [0;
 %                    1]
+% 
+% Example 2:
+%          A = [1 1 1;
+%               1 2 3;
+%               1 1 1];
+%          GetEigenvectorFromEigenvalues(A, [1], 1, eig(A)); % Provide your own eigenvalues.
+%          Returns: [0.1875]
 
      if nargin < 3 || nargin > 4
          error('GetEigenvectorFromEigenvalues accepts 3 or 4 arguments: H, ii, j, (optional) H_eigenvalues.');
