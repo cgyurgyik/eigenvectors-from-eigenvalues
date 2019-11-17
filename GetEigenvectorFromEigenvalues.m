@@ -45,8 +45,8 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      
      ii = varargin{2};
      
-     if ~isvector(ii) || length(ii) > N
-         error('ii must be a vector containing the rows of column j for which you want the eigenvector values. Its length must be less than N.');
+     if ~isvector(ii)
+         error('ii must be a vector containing the rows of column j for which you want the eigenvector values.');
      end
      
      greater_than_N = ii > N;
