@@ -47,8 +47,7 @@ end
 
 function testSmallTridiagonalMatrix(testCase)
     N = 10;
-    H = full(gallery('tridiag',N,-1,2,-1));
-    Small_Tridiagonal_Matrix = (H+H')/2;
+    Small_Tridiagonal_Matrix = full(gallery('tridiag',N,-1,2,-1));
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Small_Tridiagonal_Matrix);
     [expected_eigenvectors, ~] = eig(Small_Tridiagonal_Matrix);
     
@@ -57,8 +56,7 @@ end
 
 function testMediumTridiagonalMatrix(testCase)
     N = 100;
-    H = full(gallery('tridiag',N,-1,3,-1));
-    Medium_Tridiagonal_Matrix = (H+H')/2;
+    Medium_Tridiagonal_Matrix = full(gallery('tridiag',N,-1,3,-1));
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Medium_Tridiagonal_Matrix);
     [expected_eigenvectors, ~] = eig(Medium_Tridiagonal_Matrix);
     
@@ -67,8 +65,7 @@ end
 
 function testLargeTridiagonalMatrix(testCase)
     N = 250;
-    H = full(gallery('tridiag',N,-1,4,-1));
-    Large_Tridiagonal_Matrix = (H+H')/2;
+    Large_Tridiagonal_Matrix = full(gallery('tridiag',N,-1,4,-1));
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Large_Tridiagonal_Matrix);
     [expected_eigenvectors, ~] = eig(Large_Tridiagonal_Matrix);
     
