@@ -1,3 +1,4 @@
+function time_trials(n, num_trials, eigenvector_function)  
 % Quick benchmarking function to retrieve a random eigenvector for k consecutive trials with an n x n matrix.
 %
 % 'n' is the size of the Hermitian matrix. n > 0.
@@ -10,7 +11,7 @@
 % always be the case for @eigenvector_function.
 %
 % Example usage: time_trials(100, 10, @eig);
-function time_trials(n, num_trials, eigenvector_function)    
+
     H = randn(n,n); 
     H = (H+H')/2;
     
@@ -24,7 +25,6 @@ function time_trials(n, num_trials, eigenvector_function)
         [eigenvectors, ~] = eigenvector_function(H);
         eig_rand_eigenvector = eigenvectors(:, randi([1 n]));
     end
-    % disp(eigenvectors(1,1));
     toc;
     
     disp('------------------------------------');
