@@ -20,8 +20,20 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      end
      
      H = varargin{1};
+     [M,N] = size(H);
+     if ~ismatrix(H) || M ~= N
+         error('H must be a N x N matrix.');
+     end
+     
      ii = varargin{2};
+     if ~isvector(ii)
+         error('ii must be a vector containing the rows of column j for which you want the eigenvector values.')
+     end
+     
      j = varargin{3};
+     if ~isvector(j) || length(j) ~= 1
+         error('j must be an integer representing the column of the desired eigenvector values, such that 1 <= j <= N.')
+     end
     
      if nargin == 3
          % Calculate the eigenvalues of λi(H).
@@ -31,7 +43,7 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
          H_eigenvalues = varargin{4};
      end
      
-     assert(length(H_eigenvalues) == length(H), 'Number of eigenvalues must be equivalent to the number of rows and columns in the matrix.');
+     assert(length(H_eigenvalues) == N, 'Number of eigenvalues must be equivalent to the number of rows and columns in the matrix.');
     
      H(:, j) = []; % Remove jth column.
      H(j, :) = []; % Remove jth row.
