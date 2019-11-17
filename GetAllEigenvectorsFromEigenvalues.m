@@ -8,9 +8,14 @@ function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
 %   - (optional) 'H_eigenvalues' are the eigenvalues of H. If not provided,
 %     defaults to using MATLAB's eig().
 %
-% Requires: length(H_eigenvalues) == N.
-%
 % See: GetEigenvectorFromEigenvalues() for more information.
+% Example:
+%          A = [1 1;
+%               0 0];
+%          GetAllEigenvectorsFromEigenvalues(A);
+%
+%          Returns: [1 0;
+%                    0 1]
 
     H = varargin{1};
     if nargin == 1
