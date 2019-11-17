@@ -1,6 +1,9 @@
-% Calculating eigenvectors from eigenvalues.
-% Designed to cater to the power user, allowing him or her to produce
-% eigenvalues in the most efficient manner.
+function v_j = GetEigenvectorFromEigenvalues(varargin)
+% GetEigenvectorFromEigenvalues(H, ii, j, H_eigenvalues) calculates eigenvectors from the eigenvalues of the matrix.
+% Designed to cater to the power user, allowing him or her to produce eigenvalues in the most efficient manner.
+%
+% Reference: https://arxiv.org/pdf/1908.03795.pdf
+%
 % Gets the normed eigenvector ||v(i,j)||^2 for each i in 'ii' from the matrix H.
 %   Takes in 3 or 4 arguments:
 %   - 'H' must be a N x N Hermitian matrix.
@@ -9,9 +12,10 @@
 %   - (optional) 'H_eigenvalues' are the eigenvalues of H. If not provided,
 %     defaults to using MATLAB's eig().
 % Currently, the eigenvalues of hj are produced using MATLAB's eig().
+%
 % Requires: length(H_eigenvalues) == N.
-function v_j = GetEigenvectorFromEigenvalues(varargin)
-     if nargin ~= 3 && nargin ~= 4
+
+     if nargin < 3 || nargin > 4
          error('GetEigenvectorFromEigenvalues accepts 3 or 4 arguments: H, ii, j, (optional) H_eigenvalues.');
      end
      

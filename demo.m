@@ -1,4 +1,5 @@
-% Demonstration.
+% Demonstration of the GEFE functions.
+
 n = 5;
 H = randn(n,n);
 H = (H+H')/2;
