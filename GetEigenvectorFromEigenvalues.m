@@ -74,7 +74,7 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      Hj_eigenvalues = eig(H);
      
      num_i = numel(ii);
-     v_j = zeros(num_i),1);
+     v_j = zeros(num_i,1);
      
      for k = 1:num_i
          ei = H_eigenvalues(ii(k));
