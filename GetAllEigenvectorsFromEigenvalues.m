@@ -4,6 +4,8 @@
 %   - 'H' must be a Hermitian matrix.
 %   - (optional) 'H_eigenvalues' are the eigenvalues of H. If not provided,
 %     defaults to using MATLAB's eig().
+% Requires: length(H_eigenvalues) == N.
+% See: GetEigenvectorFromEigenvalues() for underlying implementation.
 function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
     H = varargin{1};
     if nargin == 1

@@ -1,7 +1,7 @@
-% Demonstration: H must be Hermitian.
-n = 3; 
-H = randn(n,n); 
-H = (H+H')/2; 
+% Demonstration.
+n = 5;
+H = randn(n,n);
+H = (H+H')/2;
 
 [eigenvectors, ~] = eig(H);
 disp('Eigenvectors using MatLab function: eig(H):')
