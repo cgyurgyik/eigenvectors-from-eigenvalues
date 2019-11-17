@@ -49,9 +49,10 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      H(j, :) = []; % Remove jth row.
      Hj_eigenvalues = eig(H);
      
-     v_j = zeros(numel(ii),1);
+     num_i = numel(ii);
+     v_j = zeros(num_i,1);
      
-     for k = 1:numel(ii)
+     for k = 1:num_i
          ei = H_eigenvalues(ii(k));
          H_ii = H_eigenvalues;
          H_ii(ii(k)) = [];
