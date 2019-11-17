@@ -1,7 +1,8 @@
 function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
-% Iterates through, and produces all the eigenvector values corresponding to
+% GetAllEigenvectorsFromEigenvalues(H, H_eigenvalues) iterates through, 
+% and produces all the eigenvector values corresponding to 'H'. These
+% values are then stored in 'ev_of_H'.
 %
-% 'H'. Stores them into 'ev_of_H'.
 %   Takes in 1 or 2 arguments:
 %   - 'H' must be a Hermitian matrix.
 %   - (optional) 'H_eigenvalues' are the eigenvalues of H. If not provided,
@@ -9,7 +10,7 @@ function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
 %
 % Requires: length(H_eigenvalues) == N.
 %
-% See: GetEigenvectorFromEigenvalues() for underlying implementation.
+% See: GetEigenvectorFromEigenvalues() for more information.
 
     H = varargin{1};
     if nargin == 1
