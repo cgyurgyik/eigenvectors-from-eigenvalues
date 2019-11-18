@@ -1,31 +1,29 @@
-function [avg_rel_tol, avg_abs_tol] = DetermineAverageEigenvectorPrecision(N, number_of_trials)
-% Determines the average relative tolerance and average absolute tolerance
-% for eigenvector production across an N x N Hermitian matrix.
+function avg_abs_tol = DetermineAverageEigenvectorPrecision(N, number_of_trials)
+% Determines average absolute tolerance for a random eigenvector in an N x N Hermitian matrix.
 % To reduce outliers, this is conducted over k trials, where k = number_of_trials.
 % The comparison occurs between MATLAB's eig() and GetEigenvectorFromEigenvalues().
 
     H = randn(N,N);
     H = (H+H')/2;
 
-    rel_tol = zeros(N,N);
-    abs_tol = zeros(N,N);
-    fprintf('Computing Average Eigenvector Precision for %d x %d Matrix.\n', N, N);
+    abs_tol = zeros(N, 1);
+    
+    fprintf('Computing absolute tolerance for random eigenvector in %d x %d Matrix.\n', N, N);
     fprintf('...\n');
     for k = 1:number_of_trials
+        rand_ev = randi([1 N]);
         [eig_ev, ~] = eig(H);
         eig_ev = eig_ev.^2;
+        eig_nth_ev = eig_ev(rand_ev, :);
         
-        gefe_ev = GetAllEigenvectorsFromEigenvalues(H)';
+        gefe_ev = GetEigenvectorFromEigenvalues(H, 1:N, rand_ev)';
         
-        rel_tol = rel_tol + abs(eig_ev - gefe_ev) ./ min(abs(eig_ev), abs(gefe_ev));
-        abs_tol = abs_tol + abs(eig_ev - gefe_ev);
+        abs_tol = abs_tol + abs(eig_nth_ev - gefe_ev);
     end
     
-    rel_tol_avg_over_trials = rel_tol ./ number_of_trials;
-    abs_tol_avg_over_trials = abs_tol ./ number_of_trials;
+    abs_tol_avg_over_trials = abs_tol ./ number_of_trials; % Divide by number of trials.
+    % Take average absolute tolerance of ev(1n), ev(2n), ..., ev(nn).
+    avg_abs_tol = sum(sum(abs_tol_avg_over_trials)) / N;
     
-    avg_rel_tol = sum(sum(rel_tol_avg_over_trials)) / (N * N);
-    avg_abs_tol = sum(sum(abs_tol_avg_over_trials)) / (N * N);
-    
-    fprintf('%d x %d Matrix complete. \n', N, N);
+    fprintf('%d x %d Matrix complete.\n', N, N);
 end
