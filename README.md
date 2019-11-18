@@ -12,3 +12,4 @@ Basic criteria include time and (eventually) space complexity, while also meetin
 
 ## TODO(s) 
 - Produce initial speed comparisons to eig(), svd(), svds() on variety of matrices (large, sparse, circulant, ...)
+- Measure precision relative to other MATLAB eigenvector producing functions.
