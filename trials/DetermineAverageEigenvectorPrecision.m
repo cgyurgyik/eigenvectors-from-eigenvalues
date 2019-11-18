@@ -27,5 +27,5 @@ function [avg_rel_tol, avg_abs_tol] = DetermineAverageEigenvectorPrecision(N, nu
     avg_rel_tol = sum(sum(rel_tol_avg_over_trials)) / (N * N);
     avg_abs_tol = sum(sum(abs_tol_avg_over_trials)) / (N * N);
     
-    fprintf('%d x %d Matrix complete.', N, N);
+    fprintf('%d x %d Matrix complete. \n', N, N);
 end
