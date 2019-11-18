@@ -9,7 +9,8 @@ function [avg_rel_tol, avg_abs_tol] = DetermineAverageEigenvectorPrecision(N, nu
 
     rel_tol = zeros(N,N);
     abs_tol = zeros(N,N);
-    
+    fprintf('Computing Average Eigenvector Precision for %d x %d Matrix.\n', N, N);
+    fprintf('...\n');
     for k = 1:number_of_trials
         [eig_ev, ~] = eig(H);
         eig_ev = eig_ev.^2;
@@ -25,4 +26,6 @@ function [avg_rel_tol, avg_abs_tol] = DetermineAverageEigenvectorPrecision(N, nu
     
     avg_rel_tol = sum(sum(rel_tol_avg_over_trials)) / (N * N);
     avg_abs_tol = sum(sum(abs_tol_avg_over_trials)) / (N * N);
+    
+    fprintf('%d x %d Matrix complete.', N, N);
 end
