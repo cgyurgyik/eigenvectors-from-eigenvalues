@@ -11,5 +11,4 @@ Since this formula can produce a specific eigenvector of the ith row and jth col
 Basic criteria include time and (eventually) space complexity, while also meeting precision requirements.
 
 ## TODO(s) 
-- Produce initial speed comparisons to eig(), svd(), svds() on variety of matrices (large, sparse, circulant, ...)
-- Measure precision relative to other MATLAB eigenvector producing functions.
+- Measure precision relative to eig(). Look into algorithms to reduce floating point errors.
