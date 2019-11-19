@@ -6,7 +6,7 @@ function avg_abs_tol = DetermineAverageEigenvectorPrecision(N, number_of_trials)
     H = randn(N,N);
     H = (H+H')/2;
 
-    abs_tol = zeros(N);
+    abs_tol = zeros(1,N);
     
     fprintf('Computing absolute tolerance for random eigenvector in %d x %d Matrix.\n', N, N);
     fprintf('...\n');
