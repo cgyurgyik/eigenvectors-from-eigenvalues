@@ -14,5 +14,5 @@ Basic criteria include time and (eventually) space complexity, while also meetin
 - Measure precision relative to eig(). Look into algorithms to reduce floating point errors.
 
 ## Initial Results
-As expected, the average time it takes to produce one eigenvector between 1..N is slower with MATLAB's eig than GEFE when N is large. This did not take into account the precision of the retrieved eigenvectors, so take these results with a grain of salt. In the near future, precision and larger matrices will be tested. 
+As expected, the average time it takes to produce one eigenvector between 1..N is slower with MATLAB's eig than GEFE when N is large. This did not take into account the precision of the retrieved eigenvectors, so take these results with a grain of salt. Note also that GEFE produces the normed eigenvector values. In the near future, precision and larger matrices will be tested. 
 ![Average Time to Retrieve the Nth Eigenvector](trials/AverageTimeTrials.png)
