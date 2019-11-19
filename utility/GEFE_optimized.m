@@ -51,6 +51,6 @@ function v_j = GEFE_optimized(varargin)
          
          % One way to help defeat overflow/underflow, we can sort the values from smallest to largest, and divide
          % those respectively. This allows for each [a1, a2, ..., an] /. [b1, b2, ..., bn] to be as close to 1 as possible.
-         v_j(k) = prod( (ei - Hj_eigenvalues) ./ (ei - H_ii) );
+         v_j(k) = prod( sort(ei - Hj_eigenvalues) ./ sort(ei - H_ii) );
      end
 end
