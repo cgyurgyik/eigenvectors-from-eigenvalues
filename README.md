@@ -11,13 +11,13 @@ Since this formula can produce a specific eigenvector of the ith row and jth col
 Basic criteria include time and (eventually) space complexity, while also meeting precision requirements.
 
 ## TODO(s) 
-- Look into floating point error algorithms. As N gets bigger, so does the absolute tolerance.
+- Compare times for using sort() (to improve precision) versus not using sort(). If it greatly differs, think about adding an argument to allow for either better time or better precision.
 
 ## Initial Results
-- As expected, the average time it takes to produce one eigenvector between 1..N is slower with MATLAB's eig than GEFE when N is large. Note also that GEFE produces the normed eigenvector values. In the near future, larger matrices will be tested. 
+- These trials were conducted with 10 runs averaged per matrix size N. A technique introduced to minimize underflow is to divide numbers that are relatively close to each other in size. The goal is to get each division as close as possible to 1. This requires sorting the results of each Product using MATLAB's sort(). While our precision did improve, it was at the cost of speed, since it requires sorting N elements twice. Still, it was quicker to find a random N eigenvector using GEFE when N is large. 
 
-![Average Time to Retrieve the Nth Eigenvector](trials/AverageTimeTrials.png)
+![Average Time to Retrieve the Nth Eigenvector](trials/results/WithSortAverageTime.png)
 
-- The absolute tolerance was measured by taking the average absolute tolerance of each value (compared with eig) in the given random eigenvector, and then averaging those values over k trials. In the graph below, k = 5.
+- The absolute tolerance was measured by taking the average absolute tolerance of each value (compared with eig) in the given random eigenvector.
 
-![Average Absolute Tolerance](trials/AverageAbsoluteTolerance.png)
+![Average Absolute Tolerance f](trials/results/WithSortAveragePrecision.png)
