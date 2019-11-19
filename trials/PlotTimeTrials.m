@@ -11,7 +11,7 @@ function PlotTimeTrials(plot_title, saveas_name, x_label, y_label, x_axis, legen
     xlabel(x_label);
     ylabel(y_label);
     legend(legend1_name, legend2_name);
-    txt = {'      Currently does not account for precision.', ['      Number of trials per matrix size: ', num2str(num_trials)]};
-    text(x_axis(2), ev_fn_times(length(ev_fn_times) - 1), txt);
+    % txt = {'      Currently does not account for precision.', ['      Number of trials per matrix size: ', num2str(num_trials)]};
+    % text(x_axis(2), ev_fn_times(length(ev_fn_times) - 1), txt);
     saveas(gcf, saveas_name);
 end
