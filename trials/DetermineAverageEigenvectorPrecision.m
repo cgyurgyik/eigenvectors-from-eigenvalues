@@ -23,7 +23,7 @@ function avg_abs_tol = DetermineAverageEigenvectorPrecision(N, number_of_trials)
     
     abs_tol_avg_over_trials = abs_tol ./ number_of_trials; % Divide by number of trials.
     % Take average absolute tolerance of ev(1n), ev(2n), ..., ev(nn).
-    avg_abs_tol = sum(sum(abs_tol_avg_over_trials)) / N;
+    avg_abs_tol = sum(abs_tol_avg_over_trials) / N;
     
     fprintf('%d x %d Matrix complete.\n', N, N);
 end
