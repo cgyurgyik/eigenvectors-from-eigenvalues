@@ -11,7 +11,7 @@ Since this formula can produce a specific eigenvector of the ith row and jth col
 Basic criteria include time and (eventually) space complexity, while also meeting precision requirements.
 
 ## TODO(s) 
-- Measure precision relative to eig(). Look into algorithms to reduce floating point errors.
+- Look into floating point error algorithms. As N gets bigger, so does the absolute tolerance.
 
 ## Initial Results
 - As expected, the average time it takes to produce one eigenvector between 1..N is slower with MATLAB's eig than GEFE when N is large. Note also that GEFE produces the normed eigenvector values. In the near future, larger matrices will be tested. 
