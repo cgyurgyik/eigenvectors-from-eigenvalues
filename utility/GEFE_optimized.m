@@ -1,4 +1,4 @@
-function v_j = GetEigenvectorFromEigenvalues(varargin)
+function v_j = GEFE_optimized(varargin)
 % This version is looking to optimize the loss in precision, and then compare it to the original GEFE.
 
      if nargin < 3 || nargin > 4
