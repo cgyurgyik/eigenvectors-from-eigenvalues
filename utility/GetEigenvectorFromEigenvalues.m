@@ -81,6 +81,6 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
          H_ii = H_eigenvalues;
          H_ii(ii(k)) = [];
          
-         v_j(k) = prod( (ei - Hj_eigenvalues) ./ (ei - H_ii) );
+         v_j(k) = prod( sort(ei - Hj_eigenvalues) ./ sort(ei - H_ii) );
      end
 end
