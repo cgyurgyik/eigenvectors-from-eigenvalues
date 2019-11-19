@@ -15,7 +15,7 @@ function testSmallHermitianMatrix(testCase)
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Small_Hermitian_Matrix);
     [expected_eigenvectors, ~] = eig(Small_Hermitian_Matrix);
     
-    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
 end
 
 function testMediumHermitianMatrix(testCase)
@@ -24,7 +24,7 @@ function testMediumHermitianMatrix(testCase)
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Med_Hermitian_Matrix);
     [expected_eigenvectors, ~] = eig(Med_Hermitian_Matrix);
     
-    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
 end
 
 function testMediumHermitianMatrix2(testCase)
@@ -33,17 +33,17 @@ function testMediumHermitianMatrix2(testCase)
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Med_Hermitian_Matrix);
     [expected_eigenvectors, ~] = eig(Med_Hermitian_Matrix);
     
-    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
 end
 
-% function testLargeHermitianMatrix(testCase)
-%     H = randn(250,250);
-%     Lg_Hermitian_Matrix = (H+H')/2;
-%     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Lg_Hermitian_Matrix);
-%     [expected_eigenvectors, ~] = eig(Lg_Hermitian_Matrix);
-%
-%     verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
-% end
+function testLargeHermitianMatrix(testCase)
+    H = randn(250,250);
+    Lg_Hermitian_Matrix = (H+H')/2;
+    actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Lg_Hermitian_Matrix);
+    [expected_eigenvectors, ~] = eig(Lg_Hermitian_Matrix);
+    
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
+end
 
 function testSmallTridiagonalMatrix(testCase)
     N = 10;
@@ -51,7 +51,7 @@ function testSmallTridiagonalMatrix(testCase)
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Small_Tridiagonal_Matrix);
     [expected_eigenvectors, ~] = eig(Small_Tridiagonal_Matrix);
     
-    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
 end
 
 function testMediumTridiagonalMatrix(testCase)
@@ -60,7 +60,7 @@ function testMediumTridiagonalMatrix(testCase)
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Medium_Tridiagonal_Matrix);
     [expected_eigenvectors, ~] = eig(Medium_Tridiagonal_Matrix);
     
-    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
 end
 
 function testLargeTridiagonalMatrix(testCase)
@@ -69,5 +69,5 @@ function testLargeTridiagonalMatrix(testCase)
     actual_eigenvectors = GetAllEigenvectorsFromEigenvalues(Large_Tridiagonal_Matrix);
     [expected_eigenvectors, ~] = eig(Large_Tridiagonal_Matrix);
     
-    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'RelTol', 1.0e-5);
+    verifyEqual(testCase, actual_eigenvectors', expected_eigenvectors.^2, 'AbsTol', 1.0e-10);
 end
