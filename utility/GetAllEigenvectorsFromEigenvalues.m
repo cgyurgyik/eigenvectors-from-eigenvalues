@@ -16,6 +16,13 @@ function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
 %
 %          Returns: [1 0;
 %                    0 1]
+%
+% Also valid:
+%          eigvals = eig(H);
+%          GetAllEigenvectorsFromEigenvalues(A, eigvals);
+%
+% NOTE: This is quite a bit slower than just using eig(), and is mostly for demonstration purposes. 
+% If you need ALL the eigenvectors, use built-in MATLAB functions.
 
     H = varargin{1};
     if nargin == 1
