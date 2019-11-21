@@ -25,7 +25,7 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
 %
 %          Returns: [0;
 %                    1]
-% 
+%
 % Example 2:
 %          A = [1 1 1;
 %               1 2 3;
@@ -76,14 +76,22 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      num_i = numel(ii);
      v_j = zeros(num_i,1);
      
-     for k = 1:num_i
-         ei = H_eigenvalues(ii(k));
-         H_ii = H_eigenvalues;
-         H_ii(ii(k)) = [];
-         
-         % TODO(cgyurgyik): Here, we sort before vector division occurs to reduce overflow / underflow. 
-         % Initial results have shown this to improve absolute tolerance in comparison with eig().
-         % Still plan on looking more into this. May be viable to add another argument for users to choose speed or accuracy.
-         v_j(k) = prod( sort(ei - Hj_eigenvalues) ./ sort(ei - H_ii) );
+     if N >= 1000
+        % Parallel for loops see improvement when N = ~1000.
+        parfor k = 1:num_i
+             ei = H_eigenvalues(ii(k));
+             H_ii = H_eigenvalues;
+             H_ii(ii(k)) = [];
+             
+             v_j(k) = prod( sort(ei - Hj_eigenvalues) ./ sort(ei - H_ii) );
+        end
+     else
+         for k = 1:num_i
+             ei = H_eigenvalues(ii(k));
+             H_ii = H_eigenvalues;
+             H_ii(ii(k)) = [];
+
+             v_j(k) = prod( sort(ei - Hj_eigenvalues) ./ sort(ei - H_ii) );
+        end
      end
 end

@@ -1,5 +1,5 @@
 function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
-% GetAllEigenvectorsFromEigenvalues(H, H_eigenvalues) iterates through, 
+% GetAllEigenvectorsFromEigenvalues(H, H_eigenvalues) iterates through,
 % and produces all the eigenvector values corresponding to 'H'. These
 % values are then stored in 'ev_of_H'.
 %
@@ -28,7 +28,7 @@ function ev_of_H = GetAllEigenvectorsFromEigenvalues(varargin)
     
     n = length(H);
     ev_of_H = zeros(n,n);
-    for j = 1:n
+    parfor j = 1:n
         ev_of_H(:,j) = GetEigenvectorFromEigenvalues(H,1:n,j, H_eigenvalues);
     end
 end
