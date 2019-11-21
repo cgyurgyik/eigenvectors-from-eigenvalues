@@ -12,7 +12,7 @@ Basic criteria include time and (eventually) space complexity, while also meetin
 
 ## TODOs
 - Compare times for using sort() (to improve precision) versus not using sort(). If it greatly differs, think about adding an argument to allow for either better time or better precision.
-- Look into multi-threading capabilities for MATLAB. Since each eigenvector can be solved for separately and does not rely on the previous eigenvector's value, threading seems like an entirely viable option to reduce time when looking for all the eigenvectors. 
+- Look into multi-threading capabilities for MATLAB. Since each eigenvector can be solved for separately and does not rely on the previous eigenvector's value, threading seems like an entirely viable option to reduce time when looking for all the eigenvectors. Specifically, look into _parfor_ loops.
 
 ## Initial Results
 - These trials were conducted with 10 runs averaged per matrix size N. A technique introduced to minimize underflow is to divide numbers that are relatively close to each other in size. The goal is to get each division as close as possible to 1. This requires sorting the results of each Product using MATLAB's sort(). While our precision did improve, it was at the cost of speed, since it requires sorting N elements twice. Still, it was quicker to find a random N eigenvector using GEFE when N is large. 
