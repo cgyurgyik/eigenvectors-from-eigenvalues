@@ -76,8 +76,7 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      num_i = numel(ii);
      v_j = zeros(num_i,1);
      
-     if N >= 1000
-        % Parallel for loops see improvement when N = ~1000.
+     if N >= 2500
         parfor k = 1:num_i
              ei = H_eigenvalues(ii(k));
              H_ii = H_eigenvalues;
