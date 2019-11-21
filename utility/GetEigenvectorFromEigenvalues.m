@@ -81,6 +81,9 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
          H_ii = H_eigenvalues;
          H_ii(ii(k)) = [];
          
+         % TODO(cgyurgyik): Here, we sort before vector division occurs to reduce overflow / underflow. 
+         % Initial results have shown this to improve absolute tolerance in comparison with eig().
+         % Still plan on looking more into this. May be viable to add another argument for users to choose speed or accuracy.
          v_j(k) = prod( sort(ei - Hj_eigenvalues) ./ sort(ei - H_ii) );
      end
 end
