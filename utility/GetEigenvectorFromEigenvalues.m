@@ -1,6 +1,7 @@
 function v_j = GetEigenvectorFromEigenvalues(varargin)
 % GetEigenvectorFromEigenvalues(H, ii, j, H_eigenvalues) calculates eigenvectors from the eigenvalues of the matrix.
-% Designed to cater to the power user, allowing him or her to produce eigenvalues in the most efficient manner.
+% This is designed to cater to the power user, allowing him or her to produce eigenvalues of H in the most efficient manner.
+% If none are provided, this defauts to using MATLAB's eig().
 %
 % Reference: https://arxiv.org/pdf/1908.03795.pdf
 %
