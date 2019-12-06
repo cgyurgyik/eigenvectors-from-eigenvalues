@@ -11,9 +11,10 @@ Since this formula can produce a specific normed eigenvector value of the ith ro
 Basic criteria include time and (eventually) space complexity, while also meeting precision requirements.
 
 ## TODOs
+- Apply Cauchy interlacing theorem to ensure this works for matrices with repeated eigenvalues. Since this approaches 0/0, L'Hôpital's Rule can be applied.
 - Compare times for using sort() (to improve precision) versus not using sort(). If it greatly differs, think about adding an argument to allow for either better time or better precision.
 - Determine when the overhead cost of parallelized for loops still results in reduction of time.
-- MATLAB online times out when N is approximately 6000 for 10 trials. Find a better computer and try bigger matrices.
+- MATLAB online times out when N is approximately 6000 for 10 trials. Find bigger and better computing power and attempt large matrices.
 
 ## Initial Results
 - These trials were conducted with 10 runs averaged per matrix size N. A technique introduced to minimize underflow is to divide numbers that are relatively close to each other in size. The goal is to get each division as close as possible to 1. This requires sorting the results of the product using MATLAB's sort(). While our precision did improve, it was at the cost of speed, since it requires sorting N elements twice. Still, it was quicker to find a random N eigenvector using GEFE when N is large. To minimize this cost, MATLAB's parallel for loops were initiated when N was large.
