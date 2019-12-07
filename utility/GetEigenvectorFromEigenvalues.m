@@ -51,12 +51,13 @@ function v_j = GetEigenvectorFromEigenvalues(varargin)
      end
      
      greater_than_N = ii > N;
-     if sum(greater_than_N) ~= 0
+     less_than_one = ii < 1;
+     if sum(greater_than_N) ~= 0 || sum(less_than_one) ~= 0
         error('Each i in ii must be a row of the matrix H. For each i, 1 <= i <= N.');
      end
      
      j = varargin{3};
-     if ~isvector(j) || length(j) ~= 1
+     if ~isvector(j) || length(j) ~= 1 || j > N || j < 1
          error('j must be an integer representing the column of the desired eigenvector values, such that 1 <= j <= N.')
      end
     
