@@ -11,9 +11,8 @@ Since this formula can produce a specific normed eigenvector value of the ith ro
 Basic criteria include time and (eventually) space complexity, while also meeting precision requirements.
 
 ## TODOs
+- Implement in C++.
 - Apply Cauchy interlacing theorem to ensure this works for matrices with repeated eigenvalues. Since this approaches 0/0, L'Hôpital's Rule can be applied.
-- Compare times for using sort() (to improve precision) versus not using sort(). If it greatly differs, think about adding an argument to allow for either better time or better precision.
-- Determine when the overhead cost of parallelized for loops still results in reduction of time.
 - MATLAB online times out when N is approximately 6000 for 10 trials. Find bigger and better computing power and attempt large matrices.
 
 ## Initial Results
