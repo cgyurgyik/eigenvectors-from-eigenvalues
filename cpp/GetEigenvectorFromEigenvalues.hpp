@@ -22,17 +22,17 @@
 //          arma::vec ii("1 2");
 //          arma::vec eigvals = GetEigenvectorFromEigenvalues(H, ii, /*column j=*/1);
 //
-//          eigvals.print(); // "1 0"
-//
+//          eigvals.print(); // 1.000
+//                              0.000
 // Example 2:
 //          arma::mat H("1 1 ; 0 0");
 //          arma::vec ii("2 1");
 //          arma::vec eigvals = GetEigenvectorFromEigenvalues(H, ii, /*column j=*/1);
 //
-//          eigvals.print(); // "0 1"
+//          eigvals.print(); // 0.0000
+//                              1.0000
 arma::vec GetEigenvectorFromEigenvalues(arma::mat H, arma::vec ii, int j) {
-    printf("OK");
-    return vec("1 1 1 1 1");
+    return arma::vec("1 1 1 1 1");
 }
 
 
