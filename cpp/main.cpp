@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <armadillo>
 #include "GetEigenvectorFromEigenvalues.hpp"
 
