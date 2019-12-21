@@ -1,5 +1,5 @@
 #include <armadillo>
-#include "GetEigenvectorFromEigenvalues.hpp"
+#include "GetEigenvectorFromEigenvalues.h"
 
 // Demonstration.
 int main() {

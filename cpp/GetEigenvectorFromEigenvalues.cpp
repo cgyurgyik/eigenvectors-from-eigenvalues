@@ -1,4 +1,4 @@
-#include "GetEigenvectorFromEigenvalues.hpp"
+#include "GetEigenvectorFromEigenvalues.h"
 #include <armadillo>
 
 arma::cx_vec GetEigenvectorFromEigenvalues(arma::mat H, arma::vec ii, int j) {

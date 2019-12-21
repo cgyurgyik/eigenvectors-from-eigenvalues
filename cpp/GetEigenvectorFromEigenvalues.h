@@ -1,5 +1,5 @@
-#ifndef GetEigenvectorFromEigenvalues_hpp
-#define GetEigenvectorFromEigenvalues_hpp
+#ifndef GEFE_GETEIGENVECTORFROMEIGENVALUES_H
+#define GEFE_GETEIGENVECTORFROMEIGENVALUES_H
 
 #include <armadillo>
 
@@ -32,4 +32,4 @@
 //                              1.0000
 arma::cx_vec GetEigenvectorFromEigenvalues(arma::mat H, arma::vec ii, int j);
 
-#endif /* GetEigenvectorFromEigenvalues_hpp */
+#endif //GEFE_GETEIGENVECTORFROMEIGENVALUES_H
