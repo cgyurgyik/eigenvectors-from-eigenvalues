@@ -16,6 +16,7 @@
 //
 // Currently, the eigenvalues are produced using Armadillo's eig_sym().
 //
+// TODO: Update examples.
 // Example 1:
 //          arma::mat H("1 1 ; 0 0");
 //          arma::vec ii("1 2");
@@ -30,6 +31,6 @@
 //
 //          eigvals.print(); // 0.0000
 //                              1.0000
-arma::cx_vec GetEigenvectorFromEigenvalues(arma::mat H, arma::vec ii, int j);
+arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j);
 
 #endif //GEFE_GETEIGENVECTORFROMEIGENVALUES_H
