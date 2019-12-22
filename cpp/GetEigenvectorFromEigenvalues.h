@@ -5,7 +5,7 @@
 
 // GetEigenvectorFromEigenvalues(arma::mat H, arma::vec ii, int j) calculates eigenvectors from the
 // eigenvalues of the matrix using the Armadillo C++ Linear Algebra library.
-//
+// Note: It uses indices 1...N for arguments, rather than 0...N-1.
 // Reference: https://arxiv.org/pdf/1908.03795.pdf
 //
 // Gets the normed eigenvector ||v(i,j)||^2 for each i in 'ii' from the matrix H.
@@ -16,7 +16,7 @@
 //
 // Currently, the eigenvalues are produced using Armadillo's eig_sym().
 //
-// TODO: Update examples.
+// TODO: Update examples to use Hermitian matrices.
 // Example 1:
 //          arma::mat H("1 1 ; 0 0");
 //          arma::vec ii("1 2");
