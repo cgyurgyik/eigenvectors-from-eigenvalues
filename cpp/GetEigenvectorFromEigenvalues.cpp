@@ -4,7 +4,7 @@
 // Given the corresponding eigenvalues of H and H with the jth column removed, returns the ith
 // row eigenvector. This is denoted as:
 // prod(lambda_H_i - lambda_Hj_k) / prod(lambda_H_i - lambda_H_k), when i != k.
-double get_rowi_eigenvector(int i, const arma::mat& H_eigenvalues, const arma::mat& Hj_eigenvalues) {
+double GetRowiEigenvector(int i, const arma::mat& H_eigenvalues, const arma::mat& Hj_eigenvalues) {
     const double lambda_H_i = H_eigenvalues[i];
     double v_ij = 1;
     const int jth_column = H_eigenvalues.size() - 1;
@@ -24,7 +24,7 @@ double get_rowi_eigenvector(int i, const arma::mat& H_eigenvalues, const arma::m
     return v_ij;
 }
 
-double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
+double etEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
     if (!H.is_square()) {
         throw std::invalid_argument("\nH is not square.");
     }
@@ -45,7 +45,7 @@ double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
     Hj_eigenvalues.shed_col(j);
     Hj_eigenvalues.shed_row(j);
 
-    return get_rowi_eigenvector(i, H_eigenvalues, Hj_eigenvalues);
+    return GetRowiEigenvector(i, H_eigenvalues, Hj_eigenvalues);
 }
 
 arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j) {
@@ -72,7 +72,7 @@ arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii,
 
     arma::vec v_ij(ii.size(), arma::fill::zeros);
     for (const double i : ii) {
-        v_ij[i] = get_rowi_eigenvector(i, H_eigenvalues, Hj_eigenvalues);
+        v_ij[i] = GetRowiEigenvector(i, H_eigenvalues, Hj_eigenvalues);
     }
     return v_ij;
 }
