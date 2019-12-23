@@ -12,6 +12,7 @@ Since this formula can produce a specific normed eigenvector value of the ith ro
 Basic criteria include time and (eventually) space complexity, while also meeting precision requirements.
 
 ## TODOs
+- Update requirements for C++ version.
 - Unit testing for C++ version.
 - Apply Cauchy interlacing theorem to ensure this works for matrices with repeated eigenvalues. Since this approaches 0/0, L'Hôpital's Rule can be applied.
 - MATLAB online times out when N is approximately 6000 for 10 trials. Find bigger and better computing power and attempt large matrices.
