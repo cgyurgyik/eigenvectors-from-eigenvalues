@@ -56,3 +56,7 @@ Temporary Items
 *.exe
 *.out
 *.app
+
+# Internals
+**/cmake-build-debug
+**/lib
