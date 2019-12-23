@@ -1,8 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/cgyurgyik/CLionProjects/gefe/eigenvectors-from-eigenvalues/cpp/testing
-CMake Error at lib/CMakeLists.txt:31 (add_subdirectory):
-  add_subdirectory given source "googlemock" which is not an existing
-  directory.
-
-
--- Configuring incomplete, errors occurred!
-See also "/Users/cgyurgyik/CLionProjects/gefe/eigenvectors-from-eigenvalues/cpp/testing/cmake-build-debug/CMakeFiles/CMakeOutput.log".
