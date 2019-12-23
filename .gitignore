@@ -56,7 +56,3 @@ Temporary Items
 *.exe
 *.out
 *.app
-
-cpp/testing/lib/
-cpp/cmake-build-debug/
-cpp/testing/cmake-build-debug/
