@@ -31,6 +31,6 @@
 //
 //          eigvals.print(); // 0.0000
 //                              1.0000
-arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j);
+arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j);
 
 #endif //GEFE_GETEIGENVECTORFROMEIGENVALUES_H
