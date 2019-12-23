@@ -4,10 +4,9 @@
 // Demonstration.
 int main() {
     const arma::mat H("-0.2414 0.3160; 0.3160 -0.8649");
-    const arma::vec eigvec = GetEigenvectorFromEigenvalues(H, /*row i=*/2, /*column j=*/1);
+    const double eigvec_ij = GetEigenvectorFromEigenvalues(H, /*row i=*/0, /*column j=*/0);
 
-    printf("\nGEFE:\n");
-    eigvec.print();
+    printf("\nGEFE: %f\n", eigvec_ij);
     arma::vec arma_eigvals;
     arma::mat arma_eigvecs;
     arma::eig_sym(arma_eigvals, arma_eigvecs, H);
