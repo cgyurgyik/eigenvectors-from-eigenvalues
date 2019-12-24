@@ -1,10 +1,10 @@
-#include "GetEigenvectorFromEigenvalues.h"
+#include "GEFE_utility.h"
 #include <armadillo>
 
 // Given the corresponding eigenvalues of H and H with the jth column removed, returns the ith
 // row eigenvector. This is denoted as:
 // prod(lambda_H_i - lambda_Hj_k) / prod(lambda_H_i - lambda_H_k), when i != k.
-double GetRowiEigenvector(int i, const arma::mat& H_eigenvalues, const arma::mat& Hj_eigenvalues) {
+double getRowiEigenvector(int i, const arma::mat& H_eigenvalues, const arma::mat& Hj_eigenvalues) {
     const double lambda_H_i = H_eigenvalues[i];
     double v_ij = 1;
     const int jth_column = H_eigenvalues.size() - 1;
@@ -24,7 +24,7 @@ double GetRowiEigenvector(int i, const arma::mat& H_eigenvalues, const arma::mat
     return v_ij;
 }
 
-double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
+double getEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
     if (!H.is_square()) {
         throw std::invalid_argument("\nH is not square.");
     }
@@ -45,10 +45,10 @@ double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
     Hj_eigenvalues.shed_col(j);
     Hj_eigenvalues.shed_row(j);
 
-    return GetRowiEigenvector(i, H_eigenvalues, Hj_eigenvalues);
+    return getRowiEigenvector(i, H_eigenvalues, Hj_eigenvalues);
 }
 
-arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j) {
+arma::vec getEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j) {
     if (!H.is_square()) {
         throw std::invalid_argument("\nH is not square.");
     }
@@ -72,7 +72,7 @@ arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii,
 
     arma::vec v_ij(ii.size(), arma::fill::zeros);
     for (const double i : ii) {
-        v_ij[i] = GetRowiEigenvector(i, H_eigenvalues, Hj_eigenvalues);
+        v_ij[i] = getRowiEigenvector(i, H_eigenvalues, Hj_eigenvalues);
     }
     return v_ij;
 }

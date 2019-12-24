@@ -1,9 +1,9 @@
-#ifndef GEFE_GETEIGENVECTORFROMEIGENVALUES_H
-#define GEFE_GETEIGENVECTORFROMEIGENVALUES_H
+#ifndef GEFE_GEFE_UTILITY_H
+#define GEFE_GEFE_UTILITY_H
 
 #include <armadillo>
 
-// GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j)
+// getEigenvectorFromEigenvalues(const arma::mat& H, int i, int j)
 // calculates eigenvectors from the eigenvalues of the matrix using
 // the Armadillo C++ Linear Algebra library.
 // Note: It uses indices 0...N-1.
@@ -19,11 +19,11 @@
 //
 // Example:
 //      const arma::mat H("-0.2414 0.3160; 0.3160 -0.8649");
-//      const arma::vec v11 = GetEigenvectorFromEigenvalues(H, 0, 0);
+//      const arma::vec v11 = getEigenvectorFromEigenvalues(H, 0, 0);
 //      printf("\n v(1,1): %f", v11);  // 0.1488
-double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j);
+double getEigenvectorFromEigenvalues(const arma::mat& H, int i, int j);
 
-// GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j)
+// getEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j)
 // calculates eigenvectors from the eigenvalues of the matrix using the
 // Armadillo C++ Linear Algebra library.
 // Note: It uses indices 0...N-1.
@@ -40,9 +40,9 @@ double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j);
 // Example :
 //          const arma::mat H("-0.2414 0.3160; 0.3160 -0.8649");
 //          arma::vec ii("0 1");
-//          arma::vec eigvecs = GetEigenvectorFromEigenvalues(H, ii, /*column j=*/0);
+//          arma::vec eigvecs = getEigenvectorFromEigenvalues(H, ii, /*column j=*/0);
 //          eigvecs.print(); //    0.1488
 //                           //    0.8512d
-arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j);
+arma::vec getEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j);
 
-#endif //GEFE_GETEIGENVECTORFROMEIGENVALUES_H
+#endif //GEFE_GEFE_UTILITY_H

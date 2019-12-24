@@ -7,6 +7,6 @@ include_directories(${ARMADILLO_INCLUDE_DIRS}) # <<< it is optional if armadillo
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(SOURCE_FILES main.cpp GetEigenvectorFromEigenvalues.h)
-add_executable(gefe ${SOURCE_FILES} GetEigenvectorFromEigenvalues.h GetEigenvectorFromEigenvalues.cpp)
+set(SOURCE_FILES main.cpp GEFE_utility.h)
+add_executable(gefe ${SOURCE_FILES} GEFE_utility.h GEFE_utility.cpp)
 target_link_libraries(gefe ${ARMADILLO_LIBRARIES})
