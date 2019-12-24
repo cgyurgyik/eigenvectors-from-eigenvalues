@@ -22,7 +22,7 @@ void compareGEFEwithARMA(const arma::mat& H) {
 
     for (int current_column = 0; current_column < H.n_cols; ++current_column) {
         const arma::vec gefe_eigvecs_column_j = getEigenvectorFromEigenvalues(H, ii, /*j=*/current_column);
-        const arma::vec arma_eigvecs_column_j = arma::square(arma_eigvecs.col(current_column));
+        const arma::vec arma_eigvecs_column_j = arma::square(arma_eigvecs.col(current_column)); // Normalized.
         for (const double current_row : gefe_eigvecs_column_j) {
             EXPECT_DOUBLE_EQ(arma_eigvecs_column_j[current_row], gefe_eigvecs_column_j[current_row]);
         }
