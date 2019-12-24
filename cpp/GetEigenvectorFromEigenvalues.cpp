@@ -24,7 +24,7 @@ double GetRowiEigenvector(int i, const arma::mat& H_eigenvalues, const arma::mat
     return v_ij;
 }
 
-double etEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
+double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j) {
     if (!H.is_square()) {
         throw std::invalid_argument("\nH is not square.");
     }

@@ -42,7 +42,7 @@ double GetEigenvectorFromEigenvalues(const arma::mat& H, int i, int j);
 //          arma::vec ii("0 1");
 //          arma::vec eigvecs = GetEigenvectorFromEigenvalues(H, ii, /*column j=*/0);
 //          eigvecs.print(); //    0.1488
-//                           //    0.8512
+//                           //    0.8512d
 arma::vec GetEigenvectorFromEigenvalues(const arma::mat& H, const arma::vec& ii, int j);
 
 #endif //GEFE_GETEIGENVECTORFROMEIGENVALUES_H

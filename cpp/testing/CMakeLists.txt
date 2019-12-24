@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
-project(gefe_test)
+set(CMAKE_CXX_STANDARD 17)
+project(testing)
 add_subdirectory(lib)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 find_package(Armadillo REQUIRED) # <<<
