@@ -30,10 +30,11 @@ void compareGEFEwithARMA(const arma::mat& H) {
 }
 
 TEST(TwoByTwo, Hermitian) {
-    const arma::mat H("-0.2414 0.3160; 0.3160 -0.8649");
-    compareGEFEwithARMA(H);
-}
-
-TEST(ThreeByThree, Hermitian) {
-
+    const arma::mat H1("-0.2414 0.3160; "
+                      "0.3160 -0.8649");
+    compareGEFEwithARMA(H1);
+    
+    const arma::mat H2("2.7694 0.8425; "
+                      "0.8425 0.7254");
+    compareGEFEwithARMA(H2);
 }
