@@ -13,7 +13,7 @@ Basic criteria include time and (eventually) space complexity, while also meetin
 
 ## TODOs
 - Unit testing for C++ version.
-- Apply Cauchy interlacing theorem to ensure this works for matrices with repeated eigenvalues. Since this approaches 0/0, L'Hôpital's Rule can be applied.
+- Apply Cauchy interlacing theorem to ensure this works for matrices with repeated eigenvalues. Since this approaches 0/0, L'Hôpital's Rule can be applied. Associated readings: [L'Hôpital's rule](https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule), [Cauchy interlacing theorem](https://en.wikipedia.org/wiki/Min-max_theorem#Cauchy_interlacing_theorem)
 - MATLAB online times out when N is approximately 6000 for 10 trials. Find bigger and better computing power and attempt large matrices.
 
 ## C++ Dependencies
